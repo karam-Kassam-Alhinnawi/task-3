@@ -1,0 +1,51 @@
+.card{
+    width: 300px;
+    height: 550px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img{
+    width: 90%;
+    border-radius: 10px;
+}
+
+.cardType{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.cardType span:nth-child(1){
+    background: rgb(244, 154, 154);
+    padding: 6px 8px;
+    border-radius: 10px;
+}
+.cardType span:nth-child(2){
+    color: red;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.name{
+    font-size: 18px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+    padding-bottom: 40px;
+}
+
+button{
+    margin-top: 20px;
+}

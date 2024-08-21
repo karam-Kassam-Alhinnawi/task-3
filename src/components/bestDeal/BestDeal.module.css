@@ -1,0 +1,140 @@
+.bestDeal{
+    margin-top: 180px;
+    padding-top: 32px;
+    background-color: #fbf9f9;
+    padding-inline: 120px;
+    padding-bottom: 40px;
+}
+
+.bestDealTopSection, .bestDealBottomSection{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.bestDealTopSection p{
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.bestDealTopSection h2{
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.bestDealTopSection .buttons{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+button{
+   background-color: black;
+   color: white;
+   border-radius: 4px;
+   padding: 16px 24px;
+   cursor: pointer;
+   border: none;
+   font-weight: 500;
+}
+
+/* button.active{
+    background-color: red;
+} */
+
+
+.properties{
+    box-shadow: 0 0 20px #d2d2d2;
+    border-radius: 20px;
+    width: 300px;
+    height: 400px;
+    padding-block: 20px;
+}
+
+.property{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #c0b9b9;
+
+}
+
+.propertyText p:nth-child(1){
+   color: #9d9999;
+   font-size: 18px;
+}
+
+.boldTitle{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.info{
+    width: 400px;
+}
+.info p:nth-child(1){
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.Button{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    width: 180px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 320px;
+    position: relative;      
+    margin-top: 10px;
+}
+
+.Button::before{
+    content: "";
+    position: absolute;
+    outline: none;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url(../../assets/email-icon.png) white no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border-radius: 320px;
+}
+
+.btn.active {
+    background-color: red;
+    color: white;
+}
+
+@media (max-width: 600px){
+    .properties{
+        margin-top: 24px;
+    }
+    .bestDeal{
+       margin-top: 440px;
+       padding-inline: 0;
+    }
+    .bestDealTopSection, .bestDealBottomSection{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bestDealBottomSection img{
+      width: 80%;
+      margin-block: 48px;
+    }
+
+    .info p:nth-child(1){
+        font-size: 22px;
+    }
+
+    .info p:nth-child(2), .info p:nth-child(3){
+        font-size: 18px;
+    }
+
+}

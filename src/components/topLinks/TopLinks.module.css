@@ -1,0 +1,64 @@
+.TopLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding-inline: 100px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mainInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.mainInfo img{
+    width: 30px;
+    height: 20px;
+}
+
+.verticalLine{
+    width: 1px;
+    height: 50px; 
+    background-color: grey;
+    margin: 10px;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icon{
+    color: white;
+    background-color: gray;
+    padding: 4px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+    .TopLinks{
+        flex-direction: column;
+        display: none;
+        padding-inline: 0;
+    }
+    .info{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+    }
+    .verticalLine{
+        display: none;
+    }
+    .icons{
+        padding-block: 20px;
+    }
+}

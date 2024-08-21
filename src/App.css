@@ -1,0 +1,16 @@
+*{
+    scroll-behavior: smooth;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-evenly;
+    margin-top: 60px;
+    row-gap: 50px;
+}
+
+@media (max-width: 600px) {
+    .cards{grid-template-columns: repeat(1, auto) ;}
+}
