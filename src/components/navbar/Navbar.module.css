@@ -2,6 +2,14 @@ body{
     margin: 0;
 }
 
+.activeLink{
+    color: red !important;
+}
+
+.link{
+    color: black;
+}
+
 .navbar{
     display: flex;
     justify-content: space-between;

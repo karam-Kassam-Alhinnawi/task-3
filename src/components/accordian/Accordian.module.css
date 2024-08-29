@@ -1,0 +1,36 @@
+.accordion{
+    width: 500px;
+}
+
+.accordion .Maincontent{
+    position: relative;
+    background-color: rgb(246, 245, 245);
+}
+
+.accordion .Maincontent .label{
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.accordion .Maincontent .content{
+    position: relative;
+    padding: 10px;
+    height: 0;
+    border-bottom: 1px solid rgb(206, 205, 205);
+    color: white;
+    overflow: hidden;
+    transition: .5s;
+    border-radius: 20px;
+}
+
+.accordion .Maincontent .content p{
+    color: black;
+    font-weight: 400;
+}
+
+.accordion .Maincontent.active .content{
+    height: 150px;
+    padding: 10px;
+}

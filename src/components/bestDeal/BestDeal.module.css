@@ -36,7 +36,7 @@ button{
    padding: 16px 24px;
    cursor: pointer;
    border: none;
-   font-weight: 500;
+   font-weight: bold;
 }
 
 /* button.active{
@@ -48,20 +48,19 @@ button{
     box-shadow: 0 0 20px #d2d2d2;
     border-radius: 20px;
     width: 300px;
-    height: 400px;
-    padding-block: 20px;
+    padding-block: 30px;
 }
 
 .property{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-inline: 24px;
   align-items: center;
-  gap: 20px;
   border-bottom: 1px solid #c0b9b9;
 
 }
 
-.propertyText p:nth-child(1){
+.property p:nth-child(1){
    color: #9d9999;
    font-size: 18px;
 }
@@ -90,6 +89,7 @@ button{
     border-radius: 320px;
     position: relative;      
     margin-top: 10px;
+    padding-left: 20px;
 }
 
 .Button::before{
@@ -104,11 +104,6 @@ button{
     background-position: center;
     background-size: 50%;
     border-radius: 320px;
-}
-
-.btn.active {
-    background-color: red;
-    color: white;
 }
 
 @media (max-width: 600px){

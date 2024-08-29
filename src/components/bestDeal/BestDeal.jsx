@@ -1,26 +1,53 @@
 import styles from './BestDeal.module.css';
-import bestDealImg from '../../assets/deal-01.jpg'
+import bestDealImg1 from '../../assets/deal-01.jpg';
+import bestDealImg2 from '../../assets/deal-02.jpg';
+import bestDealImg3 from '../../assets/deal-03.jpg';
+import { useState } from 'react';
 
-const BestDeal = ({button1Name, button2Name, button3Name, property1Title, property1Desc,
-   property2Title, property2Desc, property3Title, property3Desc, property4Title, property4Desc,
-   property5Title, property5Desc
-  }) => {
+const BestDeal = () => {
 
+    const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
 
-      let button = document.querySelectorAll(`.${styles.btn}`);
-       button.forEach((btn) => {
-         btn.addEventListener('click', () => {
-           if(btn.classList === styles.active){
-             btn.classList.remove(`${styles.active}`)
-            } else{
-              btn.classList.add(`${styles.active}`)
-          }
-         })
-       })
-       
+    const handleButtonClick = (index) => {
+      setSelectedButtonIndex(index)
+    }
+
+   const buttons = ['Apartment', 'Villa House', 'Penthouse'];
+
+   const data = [
+     {
+      img: bestDealImg1,
+      name: 'Property',
+      space: '185 m2',
+      number: '26th',
+      rooms: '4',
+      parking: true,
+      payment: 'Bank'
+     },
+
+     {
+      img: bestDealImg2,
+      name: 'Villa',
+      space: '250 m2',
+      number: '26th',
+      rooms: '5',
+      parking: true,
+      payment: 'Bank'
+     },
+
+     {
+      img: bestDealImg3,
+      name: 'PentHouse',
+      space: '320 m2',
+      number: '34th',
+      rooms: '6',
+      parking: true,
+      payment: 'Bank'
+     }
+   ]
 
   return (
-    <div className={styles.bestDeal} id='property'>
+    <div className={styles.bestDeal}>
        <div className={styles.bestDealTopSection}>
         
         <div>
@@ -29,63 +56,67 @@ const BestDeal = ({button1Name, button2Name, button3Name, property1Title, proper
         </div>
 
         <div className={styles.buttons}>
-            <button className={styles.btn}>{button1Name}</button>
-            <button className={styles.btn}>{button2Name}</button>
-            <button className={styles.btn}>{button3Name}</button>
+          {buttons.map((button, index) => (
+            <button className={styles.btn} onClick={() => handleButtonClick(index)} style={{backgroundColor: selectedButtonIndex === index  ? 'red' : ''}}>{button}</button>
+          ))}
         </div>
 
        </div>
 
        <div className={styles.bestDealBottomSection}>
 
-       <div className={styles.properties}>
-            
-            <div className={styles.property}>              
+          <div className={styles.properties}>
+         {data.map((arrData, index) => (
+           index === selectedButtonIndex && (
+            <>
+                <div className={styles.property}>              
+                <p>Total Flat Space</p>
+                <p className={styles.boldTitle}>{arrData.space}</p>
+                </div>
 
-              <p>{property1Desc}</p>
-              <p className={styles.boldTitle}>{property1Title}</p>
-   
-            </div>
-   
-            <div className={styles.property}>   
+                <div className={styles.property}>              
+                <p>Floor Number</p>
+                <p className={styles.boldTitle}>{arrData.number}</p>
+                </div>
 
-              <p>{property2Desc}</p>
-              <p className={styles.boldTitle}>{property2Title}</p>
-   
-            </div>
-   
-            <div className={styles.property}>
-   
-             <p>{property3Desc}</p>
-             <p className={styles.boldTitle}>{property3Title}</p>
-   
-            </div>
-   
-            <div className={styles.property}>
-   
-              <p>{property4Desc}</p>
-              <p className={styles.boldTitle}>{property4Title}</p>
-   
-            </div>
+                <div className={styles.property}>              
 
-            <div className={styles.property}>
-   
-              <p>{property5Desc}</p>
-              <p className={styles.boldTitle}>{property5Title}</p>
-   
-            </div>
-   
+                <p>Number of rooms</p>
+                <p className={styles.boldTitle}>{arrData.rooms}</p>
+                </div>
+
+                <div className={styles.property}>              
+
+                <p>Parking Available</p>
+                <p className={styles.boldTitle}>{arrData.parking ? 'Yes' : 'No'}</p>
+                </div>
+
+                <div className={styles.property} style={{borderBottom: 'none'}}>              
+
+                <p>Payment Process</p>
+                <p className={styles.boldTitle}>{arrData.payment}</p>
+
+                </div>
+            </>
+           )
+          ))}       
         </div>
 
-        <img src={bestDealImg} alt="" />
+        {data.map((arrImg, index) => ( 
+          index === selectedButtonIndex && <img src={arrImg.img} alt="" />
+        ))}
 
-        <div className={styles.info}>
-           <p>Extra Info About Property</p>
-           <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nulla vel vehicula parturient metus cursus. Cras orci cubilia finibus natoque luctus, scelerisque ornare pulvinar. Penatibus non posuere eu congue</p> 
-           <p>magnis risus efficitur dolor hendrerit. Risus velit dignissim parturient dui odio curabitur ante ultrices iaculis. Etiam facilisi hendrerit purus scelerisque litora eros etiam. Euismod nisi montes sociosqu, cras sollicitudin ad tincidunt sit maximus.</p>
-           <button className={styles.Button}>Schedule a visit</button>
+        {data.map((arrData, index) => (
+         index === selectedButtonIndex && (
+          <div className={styles.info}>
+         <p>Extra Info About {arrData.name}</p>
+         <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nulla vel vehicula parturient metus cursus. Cras orci cubilia finibus natoque luctus, scelerisque ornare pulvinar. Penatibus non posuere eu congue</p> 
+         <p>magnis risus efficitur dolor hendrerit. Risus velit dignissim parturient dui odio curabitur ante ultrices iaculis. Etiam facilisi hendrerit purus scelerisque litora eros etiam. Euismod nisi montes sociosqu, cras sollicitudin ad tincidunt sit maximus.</p>
+         <button className={styles.Button}>Schedule a visit</button>
 
-        </div>
+      </div>
+         )
+        ))}
 
        </div>
     </div>

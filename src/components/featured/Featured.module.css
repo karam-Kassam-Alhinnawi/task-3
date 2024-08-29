@@ -37,91 +37,27 @@
     margin-top: -10px;
 }
 
-.accordion{
-    width: 400px;
-}
 
-.accordion .Maincontent{
-    position: relative;
-    background-color: rgb(227, 227, 227);
-}
-.accordion .Maincontent:nth-child(1){
-    border-radius: 5px;
-}
-.accordion .Maincontent:nth-child(3){
-    border-radius: 5px;
-}
-.accordion .Maincontent .label{
-    position: relative;
-    padding: 10px;
-    cursor: pointer;
-    color: red;
-    font-weight: 700;
-}
 
-.accordion .Maincontent .content{
-    position: relative;
-    padding: 10px;
-    height: 0;
-    border-bottom: 2px solid rgb(206, 205, 205);
-    color: white;
-    overflow: hidden;
-    transition: .5s;
-}
-
-.accordion .Maincontent .content p{
-    color: black;
-    font-weight: 400;
-}
-
-.accordion .Maincontent.active .content{
-    height: 150px;
-    padding: 10px;
-}
-
-.properties{
-    box-shadow: 0 0 20px #eee;
-    border-radius: 20px;
-    width: 300px;
-    height: 450px;
-    padding-block: 20px;
-}
-
-.property{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid #c0b9b9;
-  /* padding-inline: 10px; */
-}
-
-.paddingTop{
-  padding-top: 25px;
-  margin-left: -12px;
-}
-
-.noUnderline{
-    border: 0;
-}
-
-.boldTitle{
-    font-weight: 700;
-    font-size: 20px;
-}
 
 @media (max-width: 600px){
-   .featured{
+    .featured{
     flex-direction: column;
    }
    .featured .imgsDiv{
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
-   }
-   .img2{
-    position: absolute;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+    }
+    .img2{
+        position: absolute;
     top: 520px;
     right: 10px;
+}
+.featuredApartment p:nth-child(2){
+    font-size: 20px;
+}
+.accordian{
+    width: 400px;
 }
 }

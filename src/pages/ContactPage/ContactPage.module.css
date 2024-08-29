@@ -1,0 +1,49 @@
+.form{
+    height: 550px;
+    width: 450px !important;
+}
+
+.ContactPage{
+   display: flex;
+   justify-content: space-around;
+   margin-block: 100px;
+}
+
+.desc{
+   display: flex;
+   align-items: start;
+   flex-direction: column;
+}
+
+#lorem{
+    max-width: 500px;
+}
+
+.ContactInfo{
+    display: flex;
+    flex-direction: column;
+}
+.map{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.map iframe{
+    width: 85% !important;
+    height: 300px;
+    border-radius: 12px;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .ContactPage{
+        flex-direction: column;
+        align-items: center;
+    }
+    .form{
+        width: 300px !important;
+    }
+    #lorem{
+        max-width: 400px;
+    }
+}
